@@ -1,0 +1,100 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MB Waters-Bookings</title>
+
+    <!-- BOOTSTRAP STYLES-->
+    <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="{% static 'assets/css/font-awesome.css' %}" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+</head>
+<body style="background-color: #E2E2E2;">
+    <div class="container">
+        <div class="row text-center " style="padding-top:100px;">
+            <div class="col-md-12">
+                <a href=" / " class="logo d-flex align-items-center">
+                <em><h2 class="logo me-auto me-lg-0"><a href=" / ">MB-Waters<span>.</span></a></h2></em>
+                    <!-- Uncomment the line below if you also wish to use an image logo -->
+                    <img src="{% static 'assets/img/client2.jpg' %}" alt="05" width="500" height="100" />
+                    <h4>Make Your Bookings For the Water Tanker</h4>
+                    <h4>Make your payments to the any of the various bank account number below</h4>
+                </a>
+            </div>
+        </div>
+         <div class="row ">
+                <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+                           <div class="order-form-image">
+                            <image src="{% static 'assets/image/client2.jpg' %}" alt="">
+                           </div>
+                            <div class="panel-body">
+                                <form method="POST" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    {% for message in messages %}
+                                    <h2 align="center">{{ message }}</h2>
+                                    {% endfor %}
+                                    <div class="form-group input-group">
+                                        <span class="input-group-addon"><i class="fa fa-user"  ></i></span>
+                                        {{ form.as_p }}
+                                    </div>
+                                    <button class="login100-form-btn"><input type="submit" value="submit" style="background-color: #32f64cde"></button>
+                                </form>
+                                <style>
+                                    form div {
+                                        display: flex;
+                                        align-items: center;
+                                        margin-bottom: 10;
+                                        height: 1vh;
+                                        
+                                    }
+                                    form div label {
+                                        width: 200px;
+                                    }
+                                    form div input, form div select {
+                                        flex: 1;
+                                        margin-left: 10px;
+                                    }
+                                    input[type='text'],
+                                    input[type='email'],
+                                    input[type='password']{
+                                      width: 100%;
+                                      padding: 10px;
+                                      border: 1px solid #ccc;
+                                      border-radius: 4px;
+                                      box-sizing: border-box;
+                                      margin-bottom: 20px;
+                                    }
+                                    button[type='submit']{
+                                        background-color: rgb(81, 255, 0);
+                                        padding:12px 20px;
+                                        border: none;
+                                        border-radius: 4px;
+                                        cursor: pointer;
+                                        width: 100%
+                                    }
+                                    .error-message {
+                                        color: red;
+                                        margin-bottom: 10px;
+                                    }
+
+                                </style>
+                             </div>
+                                    <div class="form-group">
+                                    <hr />
+                                    </a> Go to <a href="/">Home Page</a> 
+                                    </form>
+                            </div>
+                           
+                        </div>
+                
+                
+        </div>
+    </div>
+
+</body>
+</html>
